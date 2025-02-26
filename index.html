@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCI PSP - Brain-Computer Interfaces Priority Setting Partnership</title>
+  <style>
+    /* Reset and Base Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+    
+    /* Fixed Header with Navigation */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+    header a.logo-link { text-decoration: none; }
+    header img.logo { height: 50px; }
+    nav { margin-left: auto; }
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin-left: 20px; }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 5px 10px;
+      transition: color 0.3s;
+    }
+    nav ul li a.active,
+    nav ul li a:hover { color: #007BFF; }
+    
+    /* Container for Page Content */
+    .container { padding: 80px 20px 20px; }
+    
+    /* Tab Content Sections */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    
+    /* About Section Styles */
+    .about-section { padding: 20px; }
+    .about-section h1 { margin-bottom: 10px; }
+    .about-section p { margin-bottom: 20px; }
+    .logos { margin: 20px 0; }
+    .logos img {
+      height: 60px;
+      margin-right: 20px;
+      vertical-align: middle;
+    }
+    
+    /* Contact Form Styles */
+    .contact-form {
+      margin-top: 40px;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .contact-form h2 { margin-bottom: 15px; }
+    .contact-form label { display: block; margin-bottom: 5px; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .contact-form button {
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-form button:hover { background: #0056b3; }
+    
+    /* Work in Progress for Top 10 Section */
+    .wip { text-align: center; padding: 100px 20px; }
+    .wip h1 { margin-bottom: 20px; }
+    
+    /* Who Are We? Section Styles */
+    .who-we-are { padding: 20px; }
+    .who-we-are h1 { margin-bottom: 20px; }
+    .steering-member {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .steering-member:last-child { border-bottom: none; }
+    .steering-member h3 { margin-bottom: 5px; }
+    
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul { flex-direction: column; }
+      nav ul li { margin: 10px 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Logo and Navigation -->
+  <header>
+    <a href="#" class="logo-link"><img src="images/logo.png" alt="BCI PSP Logo" class="logo"></a>
+    <nav>
+      <ul>
+        <li><a href="#about" class="nav-link active" onclick="openTab(event, 'about')">About</a></li>
+        <li><a href="#top10" class="nav-link" onclick="openTab(event, 'top10')">Explore the Top 10</a></li>
+        <li><a href="#who" class="nav-link" onclick="openTab(event, 'who')">Who Are We?</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Main Content Container -->
+  <div class="container">
+    <!-- About Section (Default Home) -->
+    <div id="about" class="tab-content active">
+      <section class="about-section">
+        <h1>Welcome to the Brain-Computer Interfaces Priority Setting Partnership</h1>
+        <p>This partnership brings together patients, carers, clinicians, and researchers to identify and prioritise key questions in the field of brain-computer interfaces for motor impairments.</p>
+        <div class="logos">
+          <!-- Replace these src attributes with your actual image file paths -->
+          <img src="images/charity1.png" alt="Charity 1">
+          <img src="images/charity2.png" alt="Charity 2">
+          <img src="images/charity3.png" alt="Charity 3">
+          <img src="images/jla.png" alt="James Lind Alliance">
+        </div>
+      </section>
+      
+      <!-- Contact Form at the Bottom of the About Page -->
+      <section class="contact-form">
+        <h2>Contact Us</h2>
+        <!-- Update the action attribute to your desired endpoint -->
+        <form id="contactForm" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </div>
+    
+    <!-- Explore the Top 10 Section (Work in Progress) -->
+    <div id="top10" class="tab-content">
+      <div class="wip">
+        <h1>Explore the Top 10</h1>
+        <p>Work in Progress... Our top 10 priorities will be displayed here soon. Please check back later!</p>
+      </div>
+    </div>
+    
+    <!-- Who Are We Section (Steering Committee Bios) -->
+    <div id="who" class="tab-content">
+      <section class="who-we-are">
+        <h1>Who Are We?</h1>
+        <p>Meet our Steering Committee:</p>
+        
+        <!-- Example Steering Members – update these with the actual bios -->
+        <div class="steering-member">
+          <h3>Dr. Sean Doherty</h3>
+          <p>Spinal Cord Injury Researcher and Individual with Lived Experience. Provides key insights for our PSP.</p>
+        </div>
+        <div class="steering-member">
+          <h3>Dr. Jamie Brannigan</h3>
+          <p>Clinician Scientist at University of Oxford and University College London. Leads day-to-day management of the PSP.</p>
+        </div>
+        <div class="steering-member">
+          <h3>Dr. William Muirhead</h3>
+          <p>Consultant Neurosurgeon at the National Hospital for Neurology and Neurosurgery and Academic at the Francis Crick Institute.</p>
+        </div>
+        <!-- Add more steering members as needed -->
+      </section>
+    </div>
+    
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Brain-Computer Interfaces Priority Setting Partnership. All rights reserved.</p>
+  </footer>
+  
+  <!-- JavaScript for Tab Navigation -->
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, navlinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      navlinks = document.getElementsByClassName("nav-link");
+      for (i = 0; i < navlinks.length; i++) {
+        navlinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+</body>
+</html>
