@@ -75,29 +75,95 @@
     .tab-content {
       display: none;
       padding: 20px;
-      margin-bottom: 20px;
       background: #fff;
+      margin-bottom: 20px;
     }
     .tab-content.active {
       display: block;
     }
 
     /* ABOUT SECTION */
-    .about-section h1 {
-      margin-bottom: 15px;
-      font-size: 1.8rem;
-      color: #222;
+    .about-section {
+      margin-bottom: 40px;
     }
-    .about-section p {
+    .about-section .intro {
+      font-size: 1.2rem;
       margin-bottom: 20px;
     }
-    .logos {
+    .about-section .intro strong {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .about-section .details {
+      margin-bottom: 20px;
+    }
+    .supported-by {
       margin: 20px 0;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .logos {
+      text-align: center;
     }
     .logos img {
-      height: 60px;
-      margin-right: 20px;
+      height: 70px; /* slightly bigger logos */
+      margin: 0 15px;
       vertical-align: middle;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 30px 0;
+    }
+
+    /* PRIORITY SETTING PROCESS SECTION */
+    .process-section {
+      margin-bottom: 40px;
+    }
+    .process-section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .process-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .step {
+      flex: 1 1 200px;
+      margin: 10px;
+      text-align: center;
+      padding: 10px;
+    }
+    .step img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    .step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #33717D;
+    }
+    .step p {
+      font-size: 0.95rem;
+    }
+
+    /* WHAT IS A BCI SECTION */
+    .bci-section {
+      margin-bottom: 40px;
+    }
+    .bci-section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .bci-section p {
+      font-size: 1rem;
+      text-align: center;
+      padding: 0 20px;
     }
 
     /* TOP 10 SECTION */
@@ -115,6 +181,7 @@
       margin-bottom: 20px;
       font-size: 1.6rem;
       color: #222;
+      text-align: center;
     }
     .accordion {
       background: #eee;
@@ -128,8 +195,17 @@
       font-size: 1rem;
       transition: background 0.3s;
       margin-bottom: 5px;
+      position: relative;
     }
-    .accordion.active, .accordion:hover {
+    .accordion .arrow {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+    }
+    .accordion.active,
+    .accordion:hover {
       background: #ddd;
     }
     .panel {
@@ -144,11 +220,12 @@
       margin: 0;
     }
 
-    /* FOOTER WITH CONTACT FORM & LOGO */
+    /* FOOTER WITH CONTACT FORM */
     footer {
       background: rgb(51,113,125); /* #33717D */
       color: #fff;
       padding: 40px 20px;
+      text-align: center;
     }
     footer .contact-form {
       max-width: 600px;
@@ -156,7 +233,6 @@
     }
     footer .contact-form h2 {
       margin-bottom: 15px;
-      text-align: center;
     }
     footer .contact-form label {
       display: block;
@@ -194,16 +270,6 @@
       background: #33717D;
       color: #fff;
     }
-    footer .footer-logo {
-      background: #fff;
-      padding: 10px;
-      margin-top: 20px;
-      text-align: center;
-    }
-    footer .footer-logo img {
-      height: 80px;
-      object-fit: contain;
-    }
 
     /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
@@ -219,11 +285,13 @@
       .container {
         padding: 100px 20px 0;
       }
+      .process-steps {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-
   <!-- HEADER WITH LOGO & MODERN NAVIGATION -->
   <header>
     <a href="#about" class="logo-link">
@@ -243,16 +311,69 @@
     <!-- ABOUT TAB -->
     <div id="about" class="tab-content active">
       <section class="about-section">
-        <h1>Welcome to the Brain-Computer Interfaces Priority Setting Partnership</h1>
-        <p>
-          This partnership brings together patients, carers, clinicians, and researchers to identify and prioritise key questions in the field of brain-computer interfaces for motor impairments.
-        </p>
+        <div class="intro">
+          <strong>
+            The BCI Priority Setting Partnership is a collaborative process to identify and prioritise the Top 10 priorities for future brain-computer interface (BCI) research. The partnership brings together patients, carers, clinicians, and academics, with a particular focus on motor impairments caused by motor neurone disease, stroke, and spinal cord injury.
+          </strong>
+          <p class="details">
+            The partnership is funded by the UK Advanced Research and Invention Agency (ARIA), and supported by the non-profit initiative, the James Lind Alliance. Since 2004, Priority Setting Partnerships have successfully identified research priorities for over 165 conditions and/or therapies. This has helped to inform funding priorities, ensured more time is spent on high priority research activities, and enabled the patient voice to directly influence research agendas.
+          </p>
+        </div>
+        <div class="supported-by">Supported by:</div>
         <div class="logos">
           <img src="JLA Logo.png" alt="James Lind Alliance">
           <img src="MNDA Logo.jpeg" alt="MND Association">
           <img src="Stroke Logo.png" alt="Stroke Association">
           <img src="ARIA Logo.jpeg" alt="ARIA">
         </div>
+        <hr class="divider">
+        <section class="process-section">
+          <h2>What does the priority setting process look like?</h2>
+          <div class="process-steps">
+            <div class="step">
+              <img src="icons/partnership.png" alt="Establishing the partnership">
+              <h3>Establishing the partnership</h3>
+              <p>
+                We will form a Steering Group, bringing together people with motor neurone disease, stroke, spinal cord injury, their carers, clinicians, and academics. They agree on the scope of the partnership, what will happen and when, and who else to work with in order to reach as wide an audience as possible.
+              </p>
+            </div>
+            <div class="step">
+              <img src="icons/questions.png" alt="You tell us the questions you think research should answer">
+              <h3>You tell us the questions you think research should answer</h3>
+              <p>
+                We will ask people with motor impairments, carers, clinicians, and the wider BCI community to tell us what questions they think research should answer.
+              </p>
+            </div>
+            <div class="step">
+              <img src="icons/data.png" alt="Data processing">
+              <h3>Data processing</h3>
+              <p>
+                We will collect all the questions and sort them into themes. We will also look to see whether any of the questions have been answered by research already.
+              </p>
+            </div>
+            <div class="step">
+              <img src="icons/first-round.png" alt="First round of priority setting">
+              <h3>First round of priority setting</h3>
+              <p>
+                We will ask people with motor impairments, carers, clinicians, and the wider BCI community to look at the long list of questions and choose their top 10. From this, we can develop a shortlist of questions.
+              </p>
+            </div>
+            <div class="step">
+              <img src="icons/final-round.png" alt="Final round of priority setting">
+              <h3>Final round of priority setting</h3>
+              <p>
+                We will hold a workshop, involving all stakeholders, to look at the shortlist of questions and come to a consensus on the final Top 10.
+              </p>
+            </div>
+          </div>
+        </section>
+        <hr class="divider">
+        <section class="bci-section">
+          <h2>What is a BCI?</h2>
+          <p>
+            [Placeholder text for a brief explanation of Brain-Computer Interfaces. You can replace this with your content.]
+          </p>
+        </section>
       </section>
     </div>
 
@@ -270,16 +391,16 @@
     <div id="who" class="tab-content">
       <section class="who-we-are">
         <h1>Who Are We?</h1>
-        <p>Meet our Steering Committee:</p>
-        <button class="accordion">Dr. Sean Doherty</button>
+        <p style="text-align: center;">Meet our Steering Committee:</p>
+        <button class="accordion">Dr. Sean Doherty <span class="arrow">▼</span></button>
         <div class="panel">
           <p>Spinal Cord Injury Researcher and Individual with Lived Experience. Provides key insights for our PSP.</p>
         </div>
-        <button class="accordion">Dr. Jamie Brannigan</button>
+        <button class="accordion">Dr. Jamie Brannigan <span class="arrow">▼</span></button>
         <div class="panel">
           <p>Clinician Scientist at University of Oxford and University College London. Leads day-to-day management of the PSP.</p>
         </div>
-        <button class="accordion">Dr. William Muirhead</button>
+        <button class="accordion">Dr. William Muirhead <span class="arrow">▼</span></button>
         <div class="panel">
           <p>Consultant Neurosurgeon at the National Hospital for Neurology and Neurosurgery and Academic at the Francis Crick Institute.</p>
         </div>
@@ -288,7 +409,7 @@
     </div>
   </div>
 
-  <!-- FOOTER WITH CONTACT FORM & LOGO -->
+  <!-- FOOTER WITH CONTACT FORM -->
   <footer>
     <div class="contact-form">
       <h2>Contact Us</h2>
@@ -304,9 +425,6 @@
         
         <button type="submit">Send Message</button>
       </form>
-    </div>
-    <div class="footer-logo">
-      <img src="BCIPSP_withWords.png" alt="BCI PSP Logo">
     </div>
   </footer>
 
@@ -327,16 +445,19 @@
       evt.currentTarget.classList.add("active");
     }
 
-    // Accordion functionality for "Who Are We?" tab
+    // Accordion functionality for "Who Are We?" tab with arrow toggle
     var acc = document.getElementsByClassName("accordion");
     for (var i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
+        var arrow = this.querySelector(".arrow");
         if (panel.style.display === "block") {
           panel.style.display = "none";
+          arrow.textContent = "▼";
         } else {
           panel.style.display = "block";
+          arrow.textContent = "▲";
         }
       });
     }
