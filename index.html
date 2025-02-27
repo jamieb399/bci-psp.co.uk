@@ -25,7 +25,7 @@
     /* HEADER (FIXED) */
     header {
       background: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       padding: 10px 20px;
       position: fixed;
       width: 100%;
@@ -38,8 +38,7 @@
       text-decoration: none;
     }
     header img.logo {
-      /* Increase the logo size here */
-      height: 120px;
+      height: 120px; /* larger logo */
       object-fit: contain;
     }
     nav {
@@ -54,33 +53,30 @@
       margin-left: 20px;
     }
     nav ul li a {
-      text-decoration: none;
-      color: #555;
-      font-weight: bold;
+      font-size: 1rem;
       padding: 8px 12px;
-      transition: color 0.3s;
+      color: #555;
+      border-radius: 4px;
+      transition: background 0.3s, color 0.3s;
     }
-    nav ul li a.active,
-    nav ul li a:hover {
-      color: #007BFF;
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: #e0e0e0;
+      color: #33717D; /* professional blue matching footer */
     }
 
-    /* MAIN CONTAINER */
+    /* MAIN CONTAINER (FULL WIDTH) */
     .container {
-      /* extra top padding to accommodate the larger fixed header */
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 140px 20px 40px; 
+      width: 100%;
+      padding: 140px 20px 0; /* top padding accounts for fixed header */
     }
 
-    /* TAB CONTENT */
+    /* TAB CONTENT STYLES */
     .tab-content {
       display: none;
-      margin-bottom: 40px;
-      background: #fff;
-      border-radius: 5px;
       padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      background: #fff;
     }
     .tab-content.active {
       display: block;
@@ -104,7 +100,7 @@
       vertical-align: middle;
     }
 
-    /* WORK IN PROGRESS SECTION */
+    /* TOP 10 SECTION */
     .wip {
       text-align: center;
       padding: 60px 20px;
@@ -114,74 +110,99 @@
       font-size: 1.6rem;
     }
 
-    /* WHO WE ARE SECTION */
+    /* WHO ARE WE? - ACCORDION STYLE */
     .who-we-are h1 {
       margin-bottom: 20px;
       font-size: 1.6rem;
       color: #222;
     }
-    .steering-member {
-      margin-bottom: 20px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
-    }
-    .steering-member:last-child {
-      border-bottom: none;
-    }
-    .steering-member h3 {
+    .accordion {
+      background: #eee;
+      color: #33717D;
+      cursor: pointer;
+      padding: 14px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1rem;
+      transition: background 0.3s;
       margin-bottom: 5px;
-      font-size: 1.1rem;
-      color: #007BFF;
+    }
+    .accordion.active, .accordion:hover {
+      background: #ddd;
+    }
+    .panel {
+      padding: 0 14px;
+      display: none;
+      background-color: #fff;
+      overflow: hidden;
+      border-bottom: 1px solid #ccc;
+    }
+    .panel p {
+      padding: 10px 0;
+      margin: 0;
     }
 
-    /* CONTACT FORM (DUPLICATED IN EACH TAB) */
-    .contact-form {
-      margin-top: 40px;
-      background: #fff;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* FOOTER WITH CONTACT FORM & LOGO */
+    footer {
+      background: rgb(51,113,125); /* #33717D */
+      color: #fff;
+      padding: 40px 20px;
     }
-    .contact-form h2 {
+    footer .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    footer .contact-form h2 {
       margin-bottom: 15px;
+      text-align: center;
     }
-    .contact-form label {
+    footer .contact-form label {
       display: block;
       margin-bottom: 5px;
       font-weight: 600;
+      color: #fff;
     }
-    .contact-form input,
-    .contact-form textarea {
+    footer .contact-form input,
+    footer .contact-form textarea {
       width: 100%;
       padding: 8px;
       margin-bottom: 10px;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 3px;
       font-size: 0.95rem;
     }
-    .contact-form button {
-      background: #007BFF;
+    footer .contact-form input,
+    footer .contact-form textarea {
+      background: #fff;
+      color: #333;
+    }
+    footer .contact-form button {
+      background: transparent;
       color: #fff;
-      border: none;
+      border: 2px solid #fff;
       padding: 10px 20px;
       border-radius: 3px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, color 0.3s;
+      display: block;
+      margin: 0 auto;
       font-size: 0.95rem;
     }
-    .contact-form button:hover {
-      background: #0056b3;
+    footer .contact-form button:hover {
+      background: #33717D;
+      color: #fff;
     }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 20px;
+    footer .footer-logo {
       background: #fff;
-      border-top: 1px solid #ddd;
-      margin-top: 40px;
-      font-size: 0.9rem;
+      padding: 10px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    footer .footer-logo img {
+      height: 80px;
+      object-fit: contain;
     }
 
     /* RESPONSIVE DESIGN */
@@ -193,20 +214,20 @@
         margin: 10px 0;
       }
       header img.logo {
-        height: 80px; /* slightly smaller on mobile */
+        height: 80px;
       }
       .container {
-        padding: 100px 20px 40px;
+        padding: 100px 20px 0;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER WITH LOGO & NAV -->
+  <!-- HEADER WITH LOGO & MODERN NAVIGATION -->
   <header>
     <a href="#about" class="logo-link">
-      <img src="BCIPSP_withWords.png" alt="BCI PSP Logo" class="logo" />
+      <img src="BCIPSP_withWords.png" alt="BCI PSP Logo" class="logo">
     </a>
     <nav>
       <ul>
@@ -217,130 +238,81 @@
     </nav>
   </header>
 
-  <!-- MAIN CONTAINER -->
+  <!-- MAIN CONTENT (FULL WIDTH) -->
   <div class="container">
-
-    <!-- ABOUT TAB CONTENT -->
+    <!-- ABOUT TAB -->
     <div id="about" class="tab-content active">
       <section class="about-section">
         <h1>Welcome to the Brain-Computer Interfaces Priority Setting Partnership</h1>
         <p>
-          This partnership brings together patients, carers, clinicians, and
-          researchers to identify and prioritise key questions in the field of
-          brain-computer interfaces for motor impairments.
+          This partnership brings together patients, carers, clinicians, and researchers to identify and prioritise key questions in the field of brain-computer interfaces for motor impairments.
         </p>
         <div class="logos">
-          <!-- Replace these src attributes with your actual images if you have them -->
-          <img src="images/charity1.png" alt="Charity 1" />
-          <img src="images/charity2.png" alt="Charity 2" />
-          <img src="images/charity3.png" alt="Charity 3" />
-          <img src="images/jla.png" alt="James Lind Alliance" />
+          <img src="images/charity1.png" alt="Charity 1">
+          <img src="images/charity2.png" alt="Charity 2">
+          <img src="images/charity3.png" alt="Charity 3">
+          <img src="images/jla.png" alt="James Lind Alliance">
         </div>
-      </section>
-
-      <!-- CONTACT FORM at the bottom of the ABOUT tab -->
-      <section class="contact-form">
-        <h2>Contact Us</h2>
-        <form id="contactFormAbout" action="mailto:jamie.brannigan@hotmail.co.uk" method="post" enctype="text/plain">
-          <label for="nameAbout">Name</label>
-          <input type="text" id="nameAbout" name="name" required />
-
-          <label for="emailAbout">Email</label>
-          <input type="email" id="emailAbout" name="email" required />
-
-          <label for="messageAbout">Message</label>
-          <textarea id="messageAbout" name="message" rows="5" required></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
       </section>
     </div>
 
-    <!-- TOP 10 TAB CONTENT -->
+    <!-- TOP 10 TAB -->
     <div id="top10" class="tab-content">
       <div class="wip">
         <h1>Explore the Top 10</h1>
         <p>
-          Work in Progress... Our top 10 priorities will be displayed here soon.
-          Please check back later!
+          Work in Progress... Our top 10 priorities will be displayed here soon. Please check back later!
         </p>
       </div>
-
-      <!-- CONTACT FORM at the bottom of the TOP10 tab -->
-      <section class="contact-form">
-        <h2>Contact Us</h2>
-        <form id="contactFormTop10" action="mailto:jamie.brannigan@hotmail.co.uk" method="post" enctype="text/plain">
-          <label for="nameTop10">Name</label>
-          <input type="text" id="nameTop10" name="name" required />
-
-          <label for="emailTop10">Email</label>
-          <input type="email" id="emailTop10" name="email" required />
-
-          <label for="messageTop10">Message</label>
-          <textarea id="messageTop10" name="message" rows="5" required></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
-      </section>
     </div>
 
-    <!-- WHO WE ARE TAB CONTENT -->
+    <!-- WHO ARE WE TAB WITH ACCORDION FOR EACH MEMBER -->
     <div id="who" class="tab-content">
       <section class="who-we-are">
         <h1>Who Are We?</h1>
         <p>Meet our Steering Committee:</p>
-        
-        <div class="steering-member">
-          <h3>Dr. Sean Doherty</h3>
-          <p>
-            Spinal Cord Injury Researcher and Individual with Lived Experience.
-            Provides key insights for our PSP.
-          </p>
+        <button class="accordion">Dr. Sean Doherty</button>
+        <div class="panel">
+          <p>Spinal Cord Injury Researcher and Individual with Lived Experience. Provides key insights for our PSP.</p>
         </div>
-        <div class="steering-member">
-          <h3>Dr. Jamie Brannigan</h3>
-          <p>
-            Clinician Scientist at University of Oxford and University College
-            London. Leads day-to-day management of the PSP.
-          </p>
+        <button class="accordion">Dr. Jamie Brannigan</button>
+        <div class="panel">
+          <p>Clinician Scientist at University of Oxford and University College London. Leads day-to-day management of the PSP.</p>
         </div>
-        <div class="steering-member">
-          <h3>Dr. William Muirhead</h3>
-          <p>
-            Consultant Neurosurgeon at the National Hospital for Neurology and
-            Neurosurgery and Academic at the Francis Crick Institute.
-          </p>
+        <button class="accordion">Dr. William Muirhead</button>
+        <div class="panel">
+          <p>Consultant Neurosurgeon at the National Hospital for Neurology and Neurosurgery and Academic at the Francis Crick Institute.</p>
         </div>
-        <!-- Add more steering members as needed -->
-      </section>
-
-      <!-- CONTACT FORM at the bottom of the WHO WE ARE tab -->
-      <section class="contact-form">
-        <h2>Contact Us</h2>
-        <form id="contactFormWho" action="mailto:jamie.brannigan@hotmail.co.uk" method="post" enctype="text/plain">
-          <label for="nameWho">Name</label>
-          <input type="text" id="nameWho" name="name" required />
-
-          <label for="emailWho">Email</label>
-          <input type="email" id="emailWho" name="email" required />
-
-          <label for="messageWho">Message</label>
-          <textarea id="messageWho" name="message" rows="5" required></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
+        <!-- Additional accordion items can be added here -->
       </section>
     </div>
-
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER WITH CONTACT FORM & LOGO -->
   <footer>
-    <p>&copy; 2025 Brain-Computer Interfaces Priority Setting Partnership. All rights reserved.</p>
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form id="contactForm" action="mailto:jamie.brannigan@hotmail.co.uk" method="post" enctype="text/plain">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+    <div class="footer-logo">
+      <img src="BCIPSP_withWords.png" alt="BCI PSP Logo">
+    </div>
   </footer>
 
-  <!-- TAB SWITCHING SCRIPT -->
+  <!-- SCRIPTS -->
   <script>
+    // Tab switching function
     function openTab(evt, tabName) {
       var i, tabcontent, navlinks;
       tabcontent = document.getElementsByClassName("tab-content");
@@ -354,6 +326,21 @@
       document.getElementById(tabName).classList.add("active");
       evt.currentTarget.classList.add("active");
     }
+
+    // Accordion functionality for "Who Are We?" tab
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
   </script>
 </body>
 </html>
+
