@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BCI PSP - Brain-Computer Interfaces Priority Setting Partnership</title>
+  <!-- Google Font for a premium, modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* RESET & BASE STYLES */
     * {
@@ -12,8 +14,8 @@
       box-sizing: border-box;
     }
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7;
       color: #333;
       background: #f7f7f7;
     }
@@ -62,21 +64,24 @@
     nav ul li a:hover,
     nav ul li a.active {
       background: #e0e0e0;
-      color: #33717D; /* professional blue matching footer */
+      color: #33717D;
     }
 
-    /* MAIN CONTAINER (FULL WIDTH) */
+    /* MAIN CONTAINER (LIMITED WIDTH FOR READABILITY) */
     .container {
       width: 100%;
-      padding: 140px 20px 0; /* top padding accounts for fixed header */
+      max-width: 1200px;
+      margin: 140px auto 0 auto; /* centered with top padding for fixed header */
+      padding: 0 20px;
     }
 
     /* TAB CONTENT STYLES */
     .tab-content {
       display: none;
-      padding: 20px;
+      padding: 40px 30px;
       background: #fff;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+      border-radius: 5px;
     }
     .tab-content.active {
       display: block;
@@ -88,67 +93,72 @@
     }
     .about-section .intro {
       font-size: 1.2rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      line-height: 1.8;
     }
     .about-section .intro strong {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
     .about-section .details {
-      margin-bottom: 20px;
+      font-size: 1rem;
+      margin-bottom: 30px;
     }
     .supported-by {
-      margin: 20px 0;
+      margin: 30px 0 10px;
       text-align: center;
       font-size: 1rem;
-      font-weight: bold;
+      font-weight: 600;
     }
     .logos {
       text-align: center;
+      margin-bottom: 30px;
     }
     .logos img {
-      height: 70px; /* slightly bigger logos */
+      height: 70px;
       margin: 0 15px;
       vertical-align: middle;
     }
     .divider {
       border: none;
       border-top: 1px solid #ccc;
-      margin: 30px 0;
+      margin: 40px 0;
     }
 
-    /* PRIORITY SETTING PROCESS SECTION */
+    /* PRIORITY SETTING PROCESS SECTION (VERTICAL LAYOUT) */
     .process-section {
       margin-bottom: 40px;
     }
     .process-section h2 {
       font-size: 1.6rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       text-align: center;
     }
     .process-steps {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      margin-bottom: 20px;
+      display: block;
     }
     .step {
-      flex: 1 1 200px;
-      margin: 10px;
-      text-align: center;
-      padding: 10px;
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
     }
     .step img {
       height: 60px;
-      margin-bottom: 10px;
+      width: 60px;
+      margin-right: 20px;
+      flex-shrink: 0;
     }
-    .step h3 {
+    .step .step-content {
+      flex: 1;
+    }
+    .step .step-content h3 {
       font-size: 1.2rem;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: #33717D;
     }
-    .step p {
+    .step .step-content p {
       font-size: 0.95rem;
+      line-height: 1.5;
     }
 
     /* WHAT IS A BCI SECTION */
@@ -164,6 +174,7 @@
       font-size: 1rem;
       text-align: center;
       padding: 0 20px;
+      line-height: 1.6;
     }
 
     /* TOP 10 SECTION */
@@ -175,10 +186,14 @@
       margin-bottom: 20px;
       font-size: 1.6rem;
     }
+    .wip p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
 
     /* WHO ARE WE? - ACCORDION STYLE */
     .who-we-are h1 {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       font-size: 1.6rem;
       color: #222;
       text-align: center;
@@ -187,7 +202,7 @@
       background: #eee;
       color: #33717D;
       cursor: pointer;
-      padding: 14px;
+      padding: 14px 20px;
       width: 100%;
       border: none;
       text-align: left;
@@ -196,6 +211,7 @@
       transition: background 0.3s;
       margin-bottom: 5px;
       position: relative;
+      border-radius: 4px;
     }
     .accordion .arrow {
       position: absolute;
@@ -209,20 +225,23 @@
       background: #ddd;
     }
     .panel {
-      padding: 0 14px;
+      padding: 0 20px 14px 20px;
       display: none;
       background-color: #fff;
       overflow: hidden;
       border-bottom: 1px solid #ccc;
+      border-radius: 0 0 4px 4px;
+      margin-bottom: 10px;
     }
     .panel p {
       padding: 10px 0;
-      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
     /* FOOTER WITH CONTACT FORM */
     footer {
-      background: rgb(51,113,125); /* #33717D */
+      background: rgb(51,113,125);
       color: #fff;
       padding: 40px 20px;
       text-align: center;
@@ -232,7 +251,8 @@
       margin: 0 auto;
     }
     footer .contact-form h2 {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
     }
     footer .contact-form label {
       display: block;
@@ -243,11 +263,11 @@
     footer .contact-form input,
     footer .contact-form textarea {
       width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
+      padding: 10px;
+      margin-bottom: 15px;
       border: none;
-      border-radius: 3px;
-      font-size: 0.95rem;
+      border-radius: 4px;
+      font-size: 1rem;
     }
     footer .contact-form input,
     footer .contact-form textarea {
@@ -258,13 +278,13 @@
       background: transparent;
       color: #fff;
       border: 2px solid #fff;
-      padding: 10px 20px;
-      border-radius: 3px;
+      padding: 10px 25px;
+      border-radius: 4px;
       cursor: pointer;
       transition: background 0.3s, color 0.3s;
       display: block;
       margin: 0 auto;
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
     footer .contact-form button:hover {
       background: #33717D;
@@ -306,7 +326,7 @@
     </nav>
   </header>
 
-  <!-- MAIN CONTENT (FULL WIDTH) -->
+  <!-- MAIN CONTENT -->
   <div class="container">
     <!-- ABOUT TAB -->
     <div id="about" class="tab-content active">
@@ -332,38 +352,48 @@
           <div class="process-steps">
             <div class="step">
               <img src="icons/partnership.png" alt="Establishing the partnership">
-              <h3>Establishing the partnership</h3>
-              <p>
-                We will form a Steering Group, bringing together people with motor neurone disease, stroke, spinal cord injury, their carers, clinicians, and academics. They agree on the scope of the partnership, what will happen and when, and who else to work with in order to reach as wide an audience as possible.
-              </p>
+              <div class="step-content">
+                <h3>Establishing the partnership</h3>
+                <p>
+                  We will form a Steering Group, bringing together people with motor neurone disease, stroke, spinal cord injury, their carers, clinicians, and academics. They agree on the scope of the partnership, what will happen and when, and who else to work with in order to reach as wide an audience as possible.
+                </p>
+              </div>
             </div>
             <div class="step">
               <img src="icons/questions.png" alt="You tell us the questions you think research should answer">
-              <h3>You tell us the questions you think research should answer</h3>
-              <p>
-                We will ask people with motor impairments, carers, clinicians, and the wider BCI community to tell us what questions they think research should answer.
-              </p>
+              <div class="step-content">
+                <h3>You tell us the questions you think research should answer</h3>
+                <p>
+                  We will ask people with motor impairments, carers, clinicians, and the wider BCI community to tell us what questions they think research should answer.
+                </p>
+              </div>
             </div>
             <div class="step">
               <img src="icons/data.png" alt="Data processing">
-              <h3>Data processing</h3>
-              <p>
-                We will collect all the questions and sort them into themes. We will also look to see whether any of the questions have been answered by research already.
-              </p>
+              <div class="step-content">
+                <h3>Data processing</h3>
+                <p>
+                  We will collect all the questions and sort them into themes. We will also look to see whether any of the questions have been answered by research already.
+                </p>
+              </div>
             </div>
             <div class="step">
               <img src="icons/first-round.png" alt="First round of priority setting">
-              <h3>First round of priority setting</h3>
-              <p>
-                We will ask people with motor impairments, carers, clinicians, and the wider BCI community to look at the long list of questions and choose their top 10. From this, we can develop a shortlist of questions.
-              </p>
+              <div class="step-content">
+                <h3>First round of priority setting</h3>
+                <p>
+                  We will ask people with motor impairments, carers, clinicians, and the wider BCI community to look at the long list of questions and choose their top 10. From this, we can develop a shortlist of questions.
+                </p>
+              </div>
             </div>
             <div class="step">
               <img src="icons/final-round.png" alt="Final round of priority setting">
-              <h3>Final round of priority setting</h3>
-              <p>
-                We will hold a workshop, involving all stakeholders, to look at the shortlist of questions and come to a consensus on the final Top 10.
-              </p>
+              <div class="step-content">
+                <h3>Final round of priority setting</h3>
+                <p>
+                  We will hold a workshop, involving all stakeholders, to look at the shortlist of questions and come to a consensus on the final Top 10.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -382,20 +412,17 @@
       <div class="wip">
         <h1>Explore the Top 10</h1>
         <p>
-          Work in Progress... Our top 10 priorities will be displayed here soon. Please check back later!
+          Work in progress... The partnership is currently working to develop the consensus list of Top 10 research priorities.
         </p>
       </div>
     </div>
 
-    <!-- WHO ARE WE TAB WITH ACCORDION FOR EACH MEMBER -->
+    <!-- WHO ARE WE TAB WITH ACCORDION -->
     <div id="who" class="tab-content">
       <section class="who-we-are">
         <h1>Who Are We?</h1>
-        <p style="text-align: center;">Meet our Steering Committee:</p>
-        <button class="accordion">Dr. Sean Doherty <span class="arrow">▼</span></button>
-        <div class="panel">
-          <p>Spinal Cord Injury Researcher and Individual with Lived Experience. Provides key insights for our PSP.</p>
-        </div>
+        <p style="text-align: center; margin-bottom: 20px;">Meet our Steering Committee:</p>
+        <!-- Leadership/co-leads at the top -->
         <button class="accordion">Dr. Jamie Brannigan <span class="arrow">▼</span></button>
         <div class="panel">
           <p>Clinician Scientist at University of Oxford and University College London. Leads day-to-day management of the PSP.</p>
@@ -404,12 +431,17 @@
         <div class="panel">
           <p>Consultant Neurosurgeon at the National Hospital for Neurology and Neurosurgery and Academic at the Francis Crick Institute.</p>
         </div>
-        <!-- Additional accordion items can be added here -->
+        <!-- Then the rest -->
+        <button class="accordion">Dr. Sean Doherty <span class="arrow">▼</span></button>
+        <div class="panel">
+          <p>Spinal Cord Injury Researcher and Individual with Lived Experience. Provides key insights for our PSP.</p>
+        </div>
+        <!-- Additional names can be added below as needed -->
       </section>
     </div>
   </div>
 
-  <!-- FOOTER WITH CONTACT FORM -->
+  <!-- FOOTER WITH CONTACT FORM (NO Logo) -->
   <footer>
     <div class="contact-form">
       <h2>Contact Us</h2>
@@ -464,4 +496,5 @@
   </script>
 </body>
 </html>
+
 
