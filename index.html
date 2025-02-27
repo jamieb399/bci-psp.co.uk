@@ -501,42 +501,89 @@
 
   <!-- SCRIPTS -->
   <script>
-    // Ensure that on page load, the window scrolls to (0,0)
-    window.addEventListener("load", function() {
-      window.scrollTo(0, 0);
-    });
+  // 1) Disable automatic scroll restoration in modern browsers
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
 
-    // Tab switching function
-    function openTab(evt, tabName) {
-      var i, tabcontent, navlinks;
-      tabcontent = document.getElementsByClassName("tab-content");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].classList.remove("active");
-      }
-      navlinks = document.getElementsByClassName("nav-link");
-      for (i = 0; i < navlinks.length; i++) {
-        navlinks[i].classList.remove("active");
-      }
-      document.getElementById(tabName).classList.add("active");
-      evt.currentTarget.classList.add("active");
-    }
+  // 2) On DOMContentLoaded, handle any hash, then scroll to top
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
+      // e.g. "#about" -> "about"
+      const hash = window.location.hash.substring(1);
+      const tab = document.getElementById(hash);
 
-    // Accordion functionality for "Who Are We?" tab with arrow toggle
-    var acc = document.getElementsByClassName("accordion");
-    for (var i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        var arrow = this.querySelector(".arrow");
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-          arrow.textContent = "▼";
-        } else {
-          panel.style.display = "block";
-          arrow.textContent = "▲";
+      // If an element with this ID is one of our .tab-content sections, show it
+      if (tab && tab.classList.contains('tab-content')) {
+        // Hide all tabs
+        const allTabs = document.getElementsByClassName('tab-content');
+        for (let i = 0; i < allTabs.length; i++) {
+          allTabs[i].classList.remove('active');
         }
-      });
+
+        // Show the correct tab
+        tab.classList.add('active');
+
+        // (Optional) Highlight the matching nav link
+        highlightNavLink(hash);
+      }
+
+      // Remove the hash from the URL so the browser won't jump again
+      history.replaceState(null, '', window.location.pathname + window.location.search);
     }
-  </script>
+
+    // Finally, force the page to the top
+    window.scrollTo(0, 0);
+  });
+
+  // 3) TAB-SWITCHING FUNCTION
+  function openTab(evt, tabName) {
+    // Hide all tabs
+    const tabcontent = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].classList.remove("active");
+    }
+
+    // Remove 'active' class from all nav links
+    const navlinks = document.getElementsByClassName("nav-link");
+    for (let i = 0; i < navlinks.length; i++) {
+      navlinks[i].classList.remove("active");
+    }
+
+    // Show the requested tab
+    document.getElementById(tabName).classList.add("active");
+    // Mark the clicked nav link as active
+    evt.currentTarget.classList.add("active");
+  }
+
+  // (Optional) HELPER: Highlight nav link matching a given tab name
+  function highlightNavLink(tabName) {
+    const navlinks = document.getElementsByClassName("nav-link");
+    for (let i = 0; i < navlinks.length; i++) {
+      navlinks[i].classList.remove("active");
+      const onClickAttr = navlinks[i].getAttribute("onclick");
+      if (onClickAttr && onClickAttr.includes("'" + tabName + "'")) {
+        navlinks[i].classList.add("active");
+      }
+    }
+  }
+
+  // 4) ACCORDION FUNCTIONALITY
+  const acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      const arrow = this.querySelector(".arrow");
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+        arrow.textContent = "▼";
+      } else {
+        panel.style.display = "block";
+        arrow.textContent = "▲";
+      }
+    });
+  }
+</script>
 </body>
 </html>
