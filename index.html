@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BCI PSP - Brain-Computer Interfaces Priority Setting Partnership</title>
-  <!-- Google Font for a premium, modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* RESET & BASE STYLES */
     * {
       margin: 0;
       padding: 0;
@@ -23,8 +21,6 @@
       text-decoration: none;
       color: inherit;
     }
-
-    /* HEADER (FIXED) */
     header {
       background: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -40,7 +36,7 @@
       text-decoration: none;
     }
     header img.logo {
-      height: 120px; /* larger logo on desktops */
+      height: 120px;
       object-fit: contain;
     }
     nav {
@@ -66,16 +62,12 @@
       background: #e0e0e0;
       color: #33717D;
     }
-
-    /* MAIN CONTAINER (LIMITED WIDTH FOR READABILITY) */
     .container {
       width: 100%;
       max-width: 1200px;
-      margin: 140px auto 0 auto; /* centered with top padding for fixed header */
+      margin: 140px auto 0 auto;
       padding: 0 20px;
     }
-
-    /* TAB CONTENT STYLES */
     .tab-content {
       display: none;
       padding: 40px 30px;
@@ -86,8 +78,6 @@
     .tab-content.active {
       display: block;
     }
-
-    /* ABOUT SECTION */
     .about-section {
       margin-bottom: 40px;
     }
@@ -124,8 +114,6 @@
       border-top: 1px solid #ccc;
       margin: 40px 0;
     }
-
-    /* PRIORITY SETTING PROCESS SECTION (VERTICAL LAYOUT) */
     .process-section {
       margin-bottom: 40px;
     }
@@ -160,8 +148,6 @@
       font-size: 0.95rem;
       line-height: 1.5;
     }
-
-    /* WHAT IS A BCI SECTION */
     .bci-section {
       margin-bottom: 40px;
     }
@@ -176,8 +162,6 @@
       padding: 0 20px;
       line-height: 1.6;
     }
-
-    /* TOP 10 SECTION */
     .wip {
       text-align: center;
       padding: 60px 20px;
@@ -190,8 +174,6 @@
       font-size: 1rem;
       line-height: 1.6;
     }
-
-    /* WHO ARE WE? - ACCORDION STYLE */
     .who-we-are h1 {
       margin-bottom: 30px;
       font-size: 1.6rem;
@@ -245,8 +227,6 @@
       font-size: 0.95rem;
       line-height: 1.5;
     }
-
-    /* FOOTER WITH CONTACT FORM */
     footer {
       background: rgb(51,113,125);
       color: #fff;
@@ -275,9 +255,6 @@
       border: none;
       border-radius: 4px;
       font-size: 1rem;
-    }
-    footer .contact-form input,
-    footer .contact-form textarea {
       background: #fff;
       color: #333;
     }
@@ -297,8 +274,6 @@
       background: #33717D;
       color: #fff;
     }
-
-    /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -307,7 +282,7 @@
         margin: 10px 0;
       }
       header img.logo {
-        height: 80px; /* slightly smaller on tablets/smaller laptops */
+        height: 80px;
       }
       .container {
         padding: 100px 20px 0;
@@ -316,18 +291,31 @@
         flex-direction: column;
       }
     }
-
-    /* Extra small screens (e.g., iPhone) */
     @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
       header img.logo {
-        height: 60px; /* even smaller on phones */
+        height: 60px;
+        margin-bottom: 10px;
+      }
+      nav {
+        width: 100%;
+      }
+      nav ul {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER WITH LOGO & MODERN NAVIGATION -->
-  <!-- Note: changed 'href="#..."' to 'href="#"' and rely on openTab() to manage the URL/hash -->
   <header>
     <a href="#" class="logo-link" onclick="openTab(event, 'about')">
       <img src="BCIPSPLarge_withWords.png" alt="BCI PSP Logo" class="logo">
@@ -341,9 +329,7 @@
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
   <div class="container">
-    <!-- ABOUT TAB -->
     <div id="about" class="tab-content active">
       <section class="about-section">
         <div class="intro">
@@ -416,13 +402,12 @@
         <section class="bci-section">
           <h2>What is a BCI?</h2>
           <p>
-            [Placeholder text for a brief explanation of Brain-Computer Interfaces. Need to define scope for this partnership.]
+            According to the US Food and Drug Administration, an implanted BCI is a neuroprosthesis that interfaces with the central or peripheral nervous system to restore lost motor and/or sensory capabilities in patients with paralysis or amputation.
           </p>
         </section>
       </section>
     </div>
 
-    <!-- TOP 10 TAB -->
     <div id="top10" class="tab-content">
       <div class="wip">
         <h1>Explore the Top 10</h1>
@@ -432,12 +417,9 @@
       </div>
     </div>
 
-    <!-- WHO ARE WE TAB WITH UPDATED ACCORDION GROUPS -->
     <div id="who" class="tab-content">
       <section class="who-we-are">
         <h1>Who Are We?</h1>
-
-        <!-- Group 1: Team Members (alphabetically by surname) -->
         <h2>Team Members</h2>
         <button class="accordion">Dr. Harith Akram <span class="arrow">▼</span></button>
         <div class="panel"><p>To be completed.</p></div>
@@ -450,7 +432,8 @@
 
         <button class="accordion">Dr. Luke Bashford <span class="arrow">▼</span></button>
         <div class="panel">
-          <p>Dr Luke Bashford specialises in human Neuroscience and Neurotechnology. Luke leads academic clinical trials for human implanted Brain-Computer Interfaces and other implanted neurotechnologies in the UK and USA. Luke’s research group uses the recording and stimulation capabilities of these devices to investigate the neural mechanisms underlying human cognitive and sensorimotor function for basic science and clinical translation for neurological disorders. In the broader community, Luke sits on national and international committees and consortia for brain-computer interfaces such as the International BCI Society and iBCI-CC. He works directly with PPIE partners and advises government, industry and third sector organisations. Luke co-leads the National Consortium for Neurotechnology Regulation, a UK Centre of Excellence in Regulatory Science and Innovation.
+          <p>
+            Dr Luke Bashford specialises in human Neuroscience and Neurotechnology. Luke leads academic clinical trials for human implanted Brain-Computer Interfaces and other implanted neurotechnologies in the UK and USA. Luke’s research group uses the recording and stimulation capabilities of these devices to investigate the neural mechanisms underlying human cognitive and sensorimotor function for basic science and clinical translation for neurological disorders. In the broader community, Luke sits on national and international committees and consortia for brain-computer interfaces such as the International BCI Society and iBCI-CC. He works directly with PPIE partners and advises government, industry and third sector organisations. Luke co-leads the National Consortium for Neurotechnology Regulation, a UK Centre of Excellence in Regulatory Science and Innovation.
           </p>
         </div>
 
@@ -474,7 +457,9 @@
 
         <button class="accordion">Dr. Hugo Layard Horsfall <span class="arrow">▼</span></button>
         <div class="panel">
-          <p>Hugo is a neurosurgery registrar at the National Hospital for Neurology and Neurosurgery, Queen Square, and currently a Doctoral Clinical Fellow at UCL/The Francis Crick Institute where his PhD is in Neuroscience and Neurotechnology. His research focuses on using novel electrodes (Neuropixels) to understand how individual neurons function in the human brain in different disease states.</p>
+          <p>
+            Hugo is a neurosurgery registrar at the National Hospital for Neurology and Neurosurgery, Queen Square, and currently a Doctoral Clinical Fellow at UCL/The Francis Crick Institute where his PhD is in Neuroscience and Neurotechnology. His research focuses on using novel electrodes (Neuropixels) to understand how individual neurons function in the human brain in different disease states.
+          </p>
         </div>
 
         <button class="accordion">Philip Miller <span class="arrow">▼</span></button>
@@ -489,17 +474,17 @@
         <button class="accordion">Dr. David Werring <span class="arrow">▼</span></button>
         <div class="panel"><p>To be completed.</p></div>
 
-        <!-- Group 2: PSP Leads -->
         <h2>PSP Leads</h2>
         <button class="accordion">Dr. Jamie Brannigan <span class="arrow">▼</span></button>
         <div class="panel">
-          <p>Dr Jamie Brannigan is a clinician scientist who trained at the University of Cambridge, where he also completed an undergraduate degree in neuroscience. He is currently a clinician scientist at Oxford University. His primary research interests are the clinical translation of implantable brain-computer interfaces, and the development of novel endovascular approaches to BCI. Jamie has several years of BCI experience within both academia and industry. In addition to his role at Oxford, he holds an honorary research fellowship at UCL, collaborating on studies aimed at assessing the clinical needs and patient preferences for implantable BCI devices.</p>
+          <p>
+            Dr Jamie Brannigan is a clinician scientist who trained at the University of Cambridge, where he also completed an undergraduate degree in neuroscience. He is currently a clinician scientist at Oxford University. His primary research interests are the clinical translation of implantable brain-computer interfaces, and the development of novel endovascular approaches to BCI. Jamie has several years of BCI experience within both academia and industry. In addition to his role at Oxford, he holds an honorary research fellowship at UCL, collaborating on studies aimed at assessing the clinical needs and patient preferences for implantable BCI devices.
+          </p>
         </div>
 
         <button class="accordion">Dr. William Muirhead <span class="arrow">▼</span></button>
         <div class="panel"><p>To be completed.</p></div>
 
-        <!-- Group 3: JLA Advisor -->
         <h2>JLA Advisor</h2>
         <button class="accordion">Dr. Jo Watson <span class="arrow">▼</span></button>
         <div class="panel"><p>To be completed.</p></div>
@@ -507,7 +492,6 @@
     </div>
   </div>
 
-  <!-- FOOTER WITH CONTACT FORM -->
   <footer>
     <div class="contact-form">
       <h2>Contact Us</h2>
@@ -526,92 +510,69 @@
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
-  // 1) Disable automatic scroll restoration in modern browsers
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
 
-  // 2) On DOMContentLoaded, handle any existing hash, then scroll to top
-  document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.hash) {
-      const hash = window.location.hash.substring(1);
-      const tab = document.getElementById(hash);
-
-      // If an element with this ID is one of our .tab-content sections, show it
-      if (tab && tab.classList.contains('tab-content')) {
-        // Hide all tabs
-        const allTabs = document.getElementsByClassName('tab-content');
-        for (let i = 0; i < allTabs.length; i++) {
-          allTabs[i].classList.remove('active');
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        var tab = document.getElementById(hash);
+        if (tab && tab.classList.contains('tab-content')) {
+          var allTabs = document.getElementsByClassName('tab-content');
+          for (var i = 0; i < allTabs.length; i++) {
+            allTabs[i].classList.remove('active');
+          }
+          tab.classList.add('active');
+          highlightNavLink(hash);
         }
-        // Show the correct tab
-        tab.classList.add('active');
-        highlightNavLink(hash);
-      }
-    }
-    // Ensure we're at the top after handling the hash
-    window.scrollTo(0, 0);
-  });
-
-  // 3) TAB-SWITCHING FUNCTION (prevent anchor jump & scroll to top)
-  function openTab(evt, tabName) {
-    evt.preventDefault(); // Stop default anchor jump
-
-    // Hide all tabs
-    const tabcontent = document.getElementsByClassName("tab-content");
-    for (let i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].classList.remove("active");
-    }
-
-    // Remove 'active' class from all nav links
-    const navlinks = document.getElementsByClassName("nav-link");
-    for (let i = 0; i < navlinks.length; i++) {
-      navlinks[i].classList.remove("active");
-    }
-
-    // Show the requested tab
-    document.getElementById(tabName).classList.add("active");
-    // Mark the clicked nav link as active
-    evt.currentTarget.classList.add("active");
-
-    // Manually update the URL with the #tabName (no jumping)
-    history.pushState(null, '', '#' + tabName);
-
-    // Scroll to the top so the tab starts fully in view
-    window.scrollTo(0, 0);
-  }
-
-  // (Optional) HELPER: Highlight nav link matching a given tab name
-  function highlightNavLink(tabName) {
-    const navlinks = document.getElementsByClassName("nav-link");
-    for (let i = 0; i < navlinks.length; i++) {
-      navlinks[i].classList.remove("active");
-      const onClickAttr = navlinks[i].getAttribute("onclick");
-      if (onClickAttr && onClickAttr.includes("'" + tabName + "'")) {
-        navlinks[i].classList.add("active");
-      }
-    }
-  }
-
-  // 4) ACCORDION FUNCTIONALITY
-  const acc = document.getElementsByClassName("accordion");
-  for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      const panel = this.nextElementSibling;
-      const arrow = this.querySelector(".arrow");
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-        arrow.textContent = "▼";
-      } else {
-        panel.style.display = "block";
-        arrow.textContent = "▲";
       }
     });
-  }
+
+    function openTab(evt, tabName) {
+      evt.preventDefault();
+      var tabcontent = document.getElementsByClassName("tab-content");
+      for (var i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      var navlinks = document.getElementsByClassName("nav-link");
+      for (var j = 0; j < navlinks.length; j++) {
+        navlinks[j].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+      history.pushState(null, '', '#' + tabName);
+    }
+
+    function highlightNavLink(tabName) {
+      var navlinks = document.getElementsByClassName("nav-link");
+      for (var i = 0; i < navlinks.length; i++) {
+        navlinks[i].classList.remove("active");
+        var onClickAttr = navlinks[i].getAttribute("onclick");
+        if (onClickAttr && onClickAttr.includes("'" + tabName + "'")) {
+          navlinks[i].classList.add("active");
+        }
+      }
+    }
+
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        var arrow = this.querySelector(".arrow");
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+          arrow.textContent = "▼";
+        } else {
+          panel.style.display = "block";
+          arrow.textContent = "▲";
+        }
+      });
+    }
   </script>
 </body>
 </html>
+
 
