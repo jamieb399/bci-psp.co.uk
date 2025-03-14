@@ -6,6 +6,7 @@
   <title>BCI PSP - Brain-Computer Interfaces Priority Setting Partnership</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Global Reset and Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -21,6 +22,8 @@
       text-decoration: none;
       color: inherit;
     }
+    
+    /* Header and Navigation */
     header {
       background: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -63,12 +66,14 @@
       background: #e0e0e0;
       color: #33717D;
     }
-    /* Mobile hamburger menu – hidden on larger screens */
+    /* Hamburger icon – hidden on larger screens */
     .hamburger {
       display: none;
       font-size: 2rem;
       cursor: pointer;
     }
+    
+    /* Main Content Container */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -85,6 +90,8 @@
     .tab-content.active {
       display: block;
     }
+    
+    /* About Section */
     .about-section {
       margin-bottom: 40px;
     }
@@ -121,6 +128,8 @@
       border-top: 1px solid #ccc;
       margin: 40px 0;
     }
+    
+    /* Process Section */
     .process-section {
       margin-bottom: 40px;
     }
@@ -155,6 +164,8 @@
       font-size: 0.95rem;
       line-height: 1.5;
     }
+    
+    /* BCI Section */
     .bci-section {
       margin-bottom: 40px;
     }
@@ -169,6 +180,8 @@
       padding: 0 20px;
       line-height: 1.6;
     }
+    
+    /* Top 10 Section */
     .wip {
       text-align: center;
       padding: 60px 20px;
@@ -181,6 +194,8 @@
       font-size: 1rem;
       line-height: 1.6;
     }
+    
+    /* Who Are We Section */
     .who-we-are h1 {
       margin-bottom: 30px;
       font-size: 1.6rem;
@@ -234,6 +249,8 @@
       font-size: 0.95rem;
       line-height: 1.5;
     }
+    
+    /* Footer */
     footer {
       background: rgb(51,113,125);
       color: #fff;
@@ -281,6 +298,8 @@
       background: #33717D;
       color: #fff;
     }
+    
+    /* Responsive Styles */
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -299,28 +318,35 @@
       }
     }
     @media (max-width: 480px) {
-      /* Adjust header layout for mobile */
+      /* Header remains a row with space-between */
       header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
       header img.logo {
         height: 60px;
-        margin-bottom: 10px;
       }
-      /* Show hamburger icon on mobile */
+      /* Display the hamburger icon */
       .hamburger {
         display: block;
       }
-      /* Hide nav links by default */
+      /* Position nav as a dropdown below the header */
+      nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        left: 0;
+        background: #fff;
+        z-index: 999;
+      }
       nav ul {
         display: none;
-        width: 100%;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         padding: 0;
+        margin: 0;
       }
-      /* When active, display the mobile menu */
       nav ul.active {
         display: flex;
       }
@@ -340,9 +366,8 @@
   <header>
     <a href="#" class="logo-link" onclick="openTab(event, 'about')">
       <img src="BCIPSPLarge_withWords.png" alt="BCI PSP Logo" class="logo">
+      /* Designed by Dr. Lucy Thompson */
     </a>
-    <!-- Hamburger icon for mobile -->
-    <div class="hamburger" onclick="toggleMobileMenu()">&#9776;</div>
     <nav>
       <ul>
         <li><a href="#" class="nav-link active" onclick="openTab(event, 'about')">About</a></li>
@@ -350,6 +375,7 @@
         <li><a href="#" class="nav-link" onclick="openTab(event, 'who')">Who Are We?</a></li>
       </ul>
     </nav>
+    <div class="hamburger" onclick="toggleMobileMenu()">&#9776;</div>
   </header>
 
   <div class="container">
@@ -572,7 +598,7 @@
         document.querySelector('nav ul').classList.remove('active');
       }
       
-      // Force scroll to the top
+      // Always scroll to the top when switching tabs
       window.scrollTo(0, 0);
     }
 
