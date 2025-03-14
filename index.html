@@ -44,7 +44,7 @@
       object-fit: contain;
     }
     nav {
-      -left: auto;
+      margin-left: auto;
     }
     nav ul {
       list-style: none;
@@ -52,7 +52,7 @@
       align-items: center;
     }
     nav ul li {
-      -left: 20px;
+      margin-left: 20px;
     }
     nav ul li a {
       font-size: 1rem;
@@ -76,14 +76,14 @@
     .container {
       width: 100%;
       max-width: 1200px;
-      : 140px auto 0 auto; /* Default top  for larger screens */
+      margin: 140px auto 0 auto; /* Default top margin for larger screens */
       padding: 0 20px;
     }
     .tab-content {
       display: none;
       padding: 40px 30px;
       background: #fff;
-      -bottom: 40px;
+      margin-bottom: 40px;
       border-radius: 5px;
     }
     .tab-content.active {
@@ -92,49 +92,49 @@
     
     /* About Section */
     .about-section {
-      -bottom: 40px;
+      margin-bottom: 40px;
     }
     .about-section .intro {
       font-size: 1.2rem;
-      -bottom: 30px;
+      margin-bottom: 30px;
       line-height: 1.8;
     }
     .about-section .intro strong {
       display: block;
-      -bottom: 15px;
+      margin-bottom: 15px;
     }
     .about-section .details {
       font-size: 1rem;
-      -bottom: 30px;
+      margin-bottom: 30px;
     }
     .supported-by {
-      : 30px 0 10px;
+      margin: 30px 0 10px;
       text-align: center;
       font-size: 1rem;
       font-weight: 600;
     }
     .logos {
       text-align: center;
-      -bottom: 30px;
+      margin-bottom: 30px;
     }
     .logos img {
       height: 70px;
-      : 0 15px;
+      margin: 0 15px;
       vertical-align: middle;
     }
     .divider {
       border: none;
       border-top: 1px solid #ccc;
-      : 40px 0;
+      margin: 40px 0;
     }
     
     /* Process Section */
     .process-section {
-      -bottom: 40px;
+      margin-bottom: 40px;
     }
     .process-section h2 {
       font-size: 1.6rem;
-      -bottom: 30px;
+      margin-bottom: 30px;
       text-align: center;
     }
     .process-steps {
@@ -143,12 +143,12 @@
     .step {
       display: flex;
       align-items: flex-start;
-      -bottom: 25px;
+      margin-bottom: 25px;
     }
     .step img {
       height: 60px;
       width: 60px;
-      -right: 20px;
+      margin-right: 20px;
       flex-shrink: 0;
     }
     .step .step-content {
@@ -156,7 +156,7 @@
     }
     .step .step-content h3 {
       font-size: 1.2rem;
-      -bottom: 8px;
+      margin-bottom: 8px;
       color: #33717D;
     }
     .step .step-content p {
@@ -166,11 +166,11 @@
     
     /* BCI Section */
     .bci-section {
-      -bottom: 40px;
+      margin-bottom: 40px;
     }
     .bci-section h2 {
       font-size: 1.6rem;
-      -bottom: 20px;
+      margin-bottom: 20px;
       text-align: center;
     }
     .bci-section p {
@@ -186,7 +186,7 @@
       padding: 60px 20px;
     }
     .wip h1 {
-      -bottom: 20px;
+      margin-bottom: 20px;
       font-size: 1.6rem;
     }
     .wip p {
@@ -196,13 +196,13 @@
     
     /* Who Are We Section */
     .who-we-are h1 {
-      -bottom: 30px;
+      margin-bottom: 30px;
       font-size: 1.6rem;
       color: #222;
       text-align: center;
     }
     .who-we-are h2 {
-      : 30px 0 10px;
+      margin: 30px 0 10px;
       font-size: 1.4rem;
       color: #33717D;
       border-bottom: 1px solid #ccc;
@@ -219,7 +219,7 @@
       outline: none;
       font-size: 1rem;
       transition: background 0.3s;
-      -bottom: 5px;
+      margin-bottom: 5px;
       position: relative;
       border-radius: 4px;
     }
@@ -317,9 +317,9 @@
       }
     }
     @media (max-width: 480px) {
-      /* Reduce the top margin for smartphones */
+      /* Slightly reduce the top margin for smartphones */
       .container {
-        margin: 30px auto 0 auto; /* Reduced from 140px to 100px */
+        margin: 30px auto 0 auto; /* Reduced from 140px to 30px */
       }
 
       header {
@@ -640,3 +640,4 @@
   </script>
 </body>
 </html>
+
