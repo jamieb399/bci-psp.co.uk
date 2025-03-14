@@ -40,7 +40,7 @@
       text-decoration: none;
     }
     header img.logo {
-      height: 120px; /* larger logo */
+      height: 120px; /* larger logo on desktops */
       object-fit: contain;
     }
     nav {
@@ -198,7 +198,6 @@
       color: #222;
       text-align: center;
     }
-    /* Subheadings for groups */
     .who-we-are h2 {
       margin: 30px 0 10px;
       font-size: 1.4rem;
@@ -308,7 +307,7 @@
         margin: 10px 0;
       }
       header img.logo {
-        height: 80px;
+        height: 80px; /* slightly smaller on tablets/smaller laptops */
       }
       .container {
         padding: 100px 20px 0;
@@ -317,19 +316,27 @@
         flex-direction: column;
       }
     }
+
+    /* Extra small screens (e.g., iPhone) */
+    @media (max-width: 480px) {
+      header img.logo {
+        height: 60px; /* even smaller on phones */
+      }
+    }
   </style>
 </head>
 <body>
   <!-- HEADER WITH LOGO & MODERN NAVIGATION -->
+  <!-- Note: changed 'href="#..."' to 'href="#"' and rely on openTab() to manage the URL/hash -->
   <header>
-    <a href="#about" class="logo-link">
+    <a href="#" class="logo-link" onclick="openTab(event, 'about')">
       <img src="BCIPSPLarge_withWords.png" alt="BCI PSP Logo" class="logo">
     </a>
     <nav>
       <ul>
-        <li><a href="#about" class="nav-link active" onclick="openTab(event, 'about')">About</a></li>
-        <li><a href="#top10" class="nav-link" onclick="openTab(event, 'top10')">Explore the Top 10</a></li>
-        <li><a href="#who" class="nav-link" onclick="openTab(event, 'who')">Who Are We?</a></li>
+        <li><a href="#" class="nav-link active" onclick="openTab(event, 'about')">About</a></li>
+        <li><a href="#" class="nav-link" onclick="openTab(event, 'top10')">Explore the Top 10</a></li>
+        <li><a href="#" class="nav-link" onclick="openTab(event, 'who')">Who Are We?</a></li>
       </ul>
     </nav>
   </header>
@@ -526,10 +533,9 @@
     history.scrollRestoration = 'manual';
   }
 
-  // 2) On DOMContentLoaded, handle any hash, then scroll to top
+  // 2) On DOMContentLoaded, handle any existing hash, then scroll to top
   document.addEventListener('DOMContentLoaded', function() {
     if (window.location.hash) {
-      // e.g. "#about" -> "about"
       const hash = window.location.hash.substring(1);
       const tab = document.getElementById(hash);
 
@@ -540,24 +546,19 @@
         for (let i = 0; i < allTabs.length; i++) {
           allTabs[i].classList.remove('active');
         }
-
         // Show the correct tab
         tab.classList.add('active');
-
-        // (Optional) Highlight the matching nav link
         highlightNavLink(hash);
       }
-
-      // Remove the hash from the URL so the browser won't jump again
-      history.replaceState(null, '', window.location.pathname + window.location.search);
     }
-
-    // Finally, force the page to the top
+    // Ensure we're at the top after handling the hash
     window.scrollTo(0, 0);
   });
 
-  // 3) TAB-SWITCHING FUNCTION WITH SCROLL RESET
+  // 3) TAB-SWITCHING FUNCTION (prevent anchor jump & scroll to top)
   function openTab(evt, tabName) {
+    evt.preventDefault(); // Stop default anchor jump
+
     // Hide all tabs
     const tabcontent = document.getElementsByClassName("tab-content");
     for (let i = 0; i < tabcontent.length; i++) {
@@ -574,6 +575,10 @@
     document.getElementById(tabName).classList.add("active");
     // Mark the clicked nav link as active
     evt.currentTarget.classList.add("active");
+
+    // Manually update the URL with the #tabName (no jumping)
+    history.pushState(null, '', '#' + tabName);
+
     // Scroll to the top so the tab starts fully in view
     window.scrollTo(0, 0);
   }
@@ -609,3 +614,4 @@
   </script>
 </body>
 </html>
+
