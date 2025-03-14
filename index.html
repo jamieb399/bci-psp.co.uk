@@ -66,7 +66,6 @@
       background: #e0e0e0;
       color: #33717D;
     }
-    /* Hamburger icon – hidden on larger screens */
     .hamburger {
       display: none;
       font-size: 2rem;
@@ -77,7 +76,7 @@
     .container {
       width: 100%;
       max-width: 1200px;
-      margin: 140px auto 0 auto;
+      margin: 140px auto 0 auto; /* Default top margin for larger screens */
       padding: 0 20px;
     }
     .tab-content {
@@ -318,7 +317,11 @@
       }
     }
     @media (max-width: 480px) {
-      /* Header remains a row with space-between */
+      /* Slightly reduce the top margin for iPhone */
+      .container {
+        margin: 100px auto 0 auto; /* Reduced from 140px to 100px */
+      }
+
       header {
         flex-direction: row;
         justify-content: space-between;
@@ -327,11 +330,9 @@
       header img.logo {
         height: 60px;
       }
-      /* Display the hamburger icon */
       .hamburger {
         display: block;
       }
-      /* Position nav as a dropdown below the header */
       nav {
         position: absolute;
         top: 70px;
