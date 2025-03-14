@@ -544,15 +544,15 @@
   <footer>
     <div class="contact-form">
       <h2>Contact Us</h2>
-      <form id="contactForm" action="mailto:jamie.brannigan@hotmail.co.uk" method="post" enctype="text/plain">
+      <form id="contactForm" onsubmit="sendEmail(); return false;">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" required>
         
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" required>
         
         <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <textarea id="message" rows="5" required></textarea>
         
         <button type="submit">Send Message</button>
       </form>
@@ -560,6 +560,28 @@
   </footer>
 
   <script>
+    function sendEmail() {
+      // Grab the values from the form fields
+      const nameField = document.getElementById("name");
+      const emailField = document.getElementById("email");
+      const messageField = document.getElementById("message");
+      
+      const name = nameField.value.trim();
+      const email = emailField.value.trim();
+      const message = messageField.value.trim();
+  
+      // Create a clean subject & body
+      const subject = encodeURIComponent("New message from " + name);
+      const body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n\n" +
+        message
+      );
+  
+      // Launch the user's mail client with a nice subject/body
+      window.location.href = `mailto:jamie.brannigan@hotmail.co.uk?subject=${subject}&body=${body}`;
+    }
+
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
