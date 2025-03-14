@@ -543,6 +543,9 @@
       document.getElementById(tabName).classList.add("active");
       evt.currentTarget.classList.add("active");
       history.pushState(null, '', '#' + tabName);
+      
+      // Force scroll to the top whenever switching tabs
+      window.scrollTo(0, 0);
     }
 
     function highlightNavLink(tabName) {
@@ -574,5 +577,6 @@
   </script>
 </body>
 </html>
+
 
 
