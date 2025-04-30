@@ -179,7 +179,15 @@
       padding: 0 20px;
       line-height: 1.6;
     }
-    
+    .poster-link {
+      color: #33717D;            /* same teal */
+      font-weight: 600;
+      text-decoration: underline;
+      transition: color 0.3s;
+    }
+    .poster-link:hover {
+      color: #22555C;            /* slightly darker on hover */
+    }
     /* Top 10 Section */
     .wip {
       text-align: center;
@@ -452,6 +460,17 @@
           <h2>What is a BCI?</h2>
           <p>
             According to the US Food and Drug Administration, an implanted BCI is a neuroprosthesis that interfaces with the central or peripheral nervous system to restore lost motor and/or sensory capabilities in patients with paralysis or amputation.
+          </p>
+
+            <!-- New sentence with a link to the poster -->
+          <p class="poster-sentence">
+            Want to dig deeper?  
+            <a href="BCI_Educational_Poster.png"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="poster-link">
+              View our one-page educational poster&nbsp;→
+            </a>
           </p>
         </section>
       </section>
