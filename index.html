@@ -76,7 +76,7 @@
     .container {
       width: 100%;
       max-width: 1200px;
-      margin: 140px auto 0 auto;
+      margin: 140px auto 0 auto; /* Default top margin for larger screens */
       padding: 0 20px;
     }
     .tab-content {
@@ -180,15 +180,14 @@
       line-height: 1.6;
     }
     .poster-link {
-      color: #33717D;
+      color: #33717D;            /* same teal */
       font-weight: 600;
       text-decoration: underline;
       transition: color 0.3s;
     }
     .poster-link:hover {
-      color: #22555C;
+      color: #22555C;            /* slightly darker on hover */
     }
-    
     /* Top 10 Section */
     .wip {
       text-align: center;
@@ -201,7 +200,6 @@
     .wip p {
       font-size: 1rem;
       line-height: 1.6;
-      margin-bottom: 1em;
     }
     
     /* Who Are We Section */
@@ -327,9 +325,11 @@
       }
     }
     @media (max-width: 480px) {
+      /* Slightly reduce the top margin for smartphones */
       .container {
-        margin: 30px auto 0 auto;
+        margin: 30px auto 0 auto; /* Reduced from 140px to 30px */
       }
+
       header {
         flex-direction: row;
         justify-content: space-between;
@@ -388,32 +388,322 @@
 
   <div class="container">
     <div id="about" class="tab-content active">
-      <!-- unchanged -->
+      <section class="about-section">
+        <div class="intro">
+          <strong>
+            The BCI Priority Setting Partnership is a collaborative process to identify and prioritise the Top 10 priorities for future brain-computer interface (BCI) research. The partnership brings together patients, carers, clinicians, and academics, with a particular focus on motor impairments caused by motor neurone disease, stroke, and spinal cord injury.
+          </strong>
+          <p class="details">
+            The partnership is funded by the UK Advanced Research and Invention Agency (ARIA), and supported by the non-profit initiative, the James Lind Alliance. Since 2004, Priority Setting Partnerships have successfully identified research priorities for over 165 conditions and/or therapies. This has helped to inform funding priorities, ensured more time is spent on high priority research activities, and enabled the patient voice to directly influence research agendas.
+          </p>
+        </div>
+        <div class="supported-by">Supported by:</div>
+        <div class="logos">
+          <img src="JLA Logo.png" alt="James Lind Alliance">
+          <img src="MNDA Logo.jpeg" alt="MND Association">
+          <img src="Stroke Logo.png" alt="Stroke Association">
+          <img src="ARIA Logo.jpeg" alt="ARIA">
+          <img src="SIA logo.png.jpeg" alt="SIA Logo">
+        </div>
+        <div class="supported-by">Supported by:</div>
+        <hr class="divider">
+        <section class="process-section">
+          <h2>What does the priority setting process look like?</h2>
+          <div class="process-steps">
+            <div class="step">
+              <img src="Partners.png" alt="Establishing the partnership">
+              <div class="step-content">
+                <h3>Establishing the partnership</h3>
+                <p>
+                  We will form a Steering Group, bringing together people with motor neurone disease, stroke, spinal cord injury, their carers, clinicians, and academics. They agree on the scope of the partnership, what will happen and when, and who else to work with in order to reach as wide an audience as possible.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <img src="Question.png" alt="You tell us the questions you think research should answer">
+              <div class="step-content">
+                <h3>You tell us the questions you think research should answer</h3>
+                <p>
+                  We will ask people with motor impairments, carers, clinicians, and the wider BCI community to tell us what questions they think research should answer.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <img src="Data Processing.png" alt="Data processing">
+              <div class="step-content">
+                <h3>Data processing</h3>
+                <p>
+                  We will collect all the questions and sort them into themes. We will also look to see whether any of the questions have been answered by research already.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <img src="Priorities.png" alt="First round of priority setting">
+              <div class="step-content">
+                <h3>First round of priority setting</h3>
+                <p>
+                  We will ask people with motor impairments, carers, clinicians, and the wider BCI community to look at the long list of questions and choose their top 10. From this, we can develop a shortlist of questions.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <img src="Top 10.png" alt="Final round of priority setting">
+              <div class="step-content">
+                <h3>Final round of priority setting</h3>
+                <p>
+                  We will hold a workshop, involving all stakeholders, to look at the shortlist of questions and come to a consensus on the final Top 10.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr class="divider">
+        <section class="bci-section">
+          <h2>What is a BCI?</h2>
+          <p>
+            An implanted BCI is a device that interfaces with the central nervous system to restore lost motor and/or sensory capabilities for people living with motor impairments (e.g., limb weakness, amputation, or speech impairments).
+          </p>
+
+          <p>
+            Note: This definition of BCI was adapted from the existing US Food and Drug Administration definition, to limit the scope of the Priority Setting Partnership. 
+          </p>
+
+          <p class="poster-sentence">
+            New to BCI?  
+            <a href="iBCI_Information_Leaflet.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="poster-link">
+              Click to view our educational poster
+            </a>
+          </p>
+        </section>
+      </section>
     </div>
 
     <div id="top10" class="tab-content">
       <div class="wip">
         <h1>Explore the Top 10</h1>
-        <p>Work in progress... The partnership is currently working to develop the consensus list of Top 10 research priorities.</p>
-        
-        <p>Want to have your voice heard?</p>
-
-        <p><a href="https://www.surveymonkey.com/r/65Q5C8K" target="_blank" rel="noopener noreferrer">Find the online survey</a></p>
-        <p><a href="BCI PSP Paper Survey.pdf" target="_blank" rel="noopener noreferrer">Download the survey PDF</a></p>
+        <p>
+          Work in progress... The partnership is currently working to develop the consensus list of Top 10 research priorities.
+        </p>
+        <p>
+          Want to have your voice heard? 
+          <a href="https://www.surveymonkey.com/r/65Q5C8K"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="poster-link">
+            Click here to find the online survey
+          </a>.<br>
+          <a href="BCI PSP Paper Survey.pdf"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="poster-link">
+            Click here to download the survey PDF
+          </a>.
+        </p>
       </div>
     </div>
 
     <div id="who" class="tab-content">
-      <!-- unchanged -->
+      <section class="who-we-are">
+        <h1>Who Are We?</h1>
+        <h2>Team Members</h2>
+        <button class="accordion">Dr. Harith Akram <span class="arrow">▼</span></button>
+        <div class="panel"><p>Mr Akram is a consultant neurosurgeon at the National Hospital for Neurology and Neurosurgery (UCLH) and the Unit of Functional Neurosurgery (UCL) in Queen Square. Most of his practice involves neuromodulation through implanted brain electrodes or lesions. He also runs clinical trials involving BCI devices.</p></div>
+
+        <button class="accordion">David Aston <span class="arrow">▼</span></button>
+        <div class="panel"><p>Indivdual with lived experience of stroke.</p></div>
+
+        <button class="accordion">Jacki Aston <span class="arrow">▼</span></button>
+        <div class="panel"><p>Family member/carer of an individual with lived experience.</p></div>
+
+        <button class="accordion">Dr. Luke Bashford <span class="arrow">▼</span></button>
+        <div class="panel">
+          <p>
+            Dr Luke Bashford specialises in human Neuroscience and Neurotechnology. Luke leads academic clinical trials for human implanted Brain-Computer Interfaces and other implanted neurotechnologies in the UK and USA. His research group uses the recording and stimulation capabilities of these devices to investigate the neural mechanisms underlying human cognitive and sensorimotor function for basic science and clinical translation for neurological disorders. In the broader community, he sits on national and international committees and consortia for brain-computer interfaces such as the International BCI Society and iBCI-CC. He works directly with PPIE partners and advises government, industry and third sector organisations. Luke co-leads the National Consortium for Neurotechnology Regulation, a UK Centre of Excellence in Regulatory Science and Innovation.
+          </p>
+        </div>
+
+        <button class="accordion">Ian Burkhart <span class="arrow">▼</span></button>
+        <div class="panel"><p>Ian became tetraplegic following a diving accident in 2010, and later restored movement to a paralyzed limb using BCI neuroprosthetic. He founded the BCI Pioneers Coalition, leads the North American Spinal Cord Injury Consortium, and advocates for spinal cord injury research. His work amplifies lived experiences of people with disabilities</p></div>
+        
+        <button class="accordion">Dr. Richard Cave <span class="arrow">▼</span></button>
+        <div class="panel"><p>Qualified and practicing Speech and Language Therapist (SLT) and Research Fellow at UCL's Global Disability Innovation Hub (GDI Hub), and co-Director of GDI Hub's newly launched Centre for Digital Language Inclusion. Principal SLT with the MND Association, the leading non-profit/charity for people living with motor neurone disease (MND) in the UK.</p></div>
+
+        <button class="accordion">Dr. Manish Desai <span class="arrow">▼</span></button>
+        <div class="panel"><p>To be completed.</p></div>
+
+        <button class="accordion">Dr. Esmee Dohle <span class="arrow">▼</span></button>
+        <div class="panel"><p>Dr Esmee Dohle is an academic clinician training at Oxford University Hospitals. She has an active interest in assistive technology to improve the lives of patients with motor impairments. Through research at the University of Oxford, University of Cambridge and University Medical Center Utrecht, she has contributed to ongoing research in the field of implantable brain-computer interfaces. She is an active member of the implantable brain-computer interface collaborative community (iBCI-cc), which aims to bring together individuals with lived experience of motor impairments, clinicians, engineers and researchers to advance the iBCI field.</p></div>
+
+        <button class="accordion">Jen Horder <span class="arrow">▼</span></button>
+        <div class="panel"><p>I am Jen Horder who had a stroke nearly 5 years ago leaving me with aphasia and apraxia and with very limited use of my right arm and hand.  I am now driving again, cycling with friends, I meet with various Stroke support groups locally and have taken part in private speech therapy.</p></div>
+
+        <button class="accordion">Dr. Hugo Layard Horsfall <span class="arrow">▼</span></button>
+        <div class="panel">
+          <p>
+            Hugo is a neurosurgery registrar at the National Hospital for Neurology and Neurosurgery, Queen Square, and currently a Doctoral Clinical Fellow at UCL/The Francis Crick Institute where his PhD is in Neuroscience and Neurotechnology. His research focuses on using novel electrodes (Neuropixels) to understand how individual neurons function in the human brain in different disease states.
+          </p>
+        </div>
+
+        <button class="accordion">Yvonne Johnson <span class="arrow">▼</span></button>
+        <div class="panel"><p>Individual with lived experience of motor neuron disease.</p></div>
+
+        <button class="accordion">Philip Miller <span class="arrow">▼</span></button>
+        <div class="panel"><p>In August 2021 I was diagnosed with MND/ALS initially with speech symptoms. Later the disease has progressed to my limbs, but I'm still here. My employer Bloomberg and my team have been amazing and I'm still working. I work as a software developer and have keen interest in technology relaying on it more for life. I have a very supportive wife and three grown up kids.</p></div>
+
+        <button class="accordion">Jean Richards <span class="arrow">▼</span></button>
+        <div class="panel"><p>I am the mother of Jen Horder who had a stroke nearly 5 years ago, leaving her with aphasia and apraxia and with very limited use of the right arm and hand.  Jen is now driving herself, cycles with friends, meets with various Stroke support groups in her area and has taken part in private speech therapy.</p></div>
+
+        <button class="accordion">James Murphy <span class="arrow">▼</span></button>
+        <div class="panel"><p>James had a cycle accident in February 2024, which resulted in a spinal cord injury that left him paralysed from below the shoulders. Prior to his injury, James worked as a human factors engineer/ ergonomist for Transport for London. His role was to ensure human computer and human machine interfaces were usable for operators, maintainers and the general public across many different engineering projects.</p></div>
+
+        <button class="accordion">Dr. Anne Vanhoestenberghe<span class="arrow">▼</span></button>
+        <div class="panel"><p>Anne Vanhoestenberghe is Professor of Active Implantable Medical Device (AIMD) at King's College London (UK).  She studied micro-electronics engineering at Université Libre de Bruxelles (Belgium), and completed her PhD at University College London (UK).  Her research interests are on innovation in AIMD manufacture, new clinical applications and their long-term reliability.</p></div>
+        
+        <button class="accordion">Dr. Abbey Sawyer <span class="arrow">▼</span></button>
+        <div class="panel"><p>Dr. Abbey Sawyer is a Postdoctoral Research Fellow at the Abilities Research Center, Icahn School of Medicine at Mount Sinai in New York. With expertise in neurological research and clinical training as a physiotherapist in Australia, she focuses on advancing brain-computer interfaces (BCIs) in clinical trials and developing novel outcome measures. Her goal is to enhance independence and improve outcome assessment for individuals with ALS and severe neuromuscular conditions.</p></div>
+
+        <button class="accordion">Dr. David Werring <span class="arrow">▼</span></button>
+        <div class="panel"><p>Professor of Clinical Neurology and Honorary Consultant Neurologist at the Stroke Research Centre, UCL Institute of Neurology, Queen Square, and the National Hospital for Neurology and Neurosurgery (NHNN), University College Hospitals (UCH) NHS Foundation Trust. He trained in medicine at Guy's hospital and in neurology at Kings College Hospital, St Thomas' hospital and the National hospital, Queen Square. Professor Werring contributes to delivering hyperacute and acute stroke care, and runs a specialist clinical service and research program in intracerebral haemorrhage and cerebral small vessel disease. He is Head of the Research Department of Brain Repair and Rehabilitation at the Institute of Neurology, Chair of the Association of British Neurologists Stroke Advisory Group, Stroke Specialty Lead for the NIHR North Thames Clinical Research Network, Expert Advisor to the NICE centre for guidelines, and on the Editorial Boards of the European Journal of Neurology, European Stroke Journal, and Practical Neurology. David was a Visiting Fellow at Clare Hall, University of Cambridge in 2023, and is now a Clare Hall Life Member. David is Past-Chair of the UK Stroke Forum, the largest multidisciplinary event for stroke care professionals in the UK, and is President of the British Association of Stroke Physicians, 2024-2026. He was appointed as an NIHR Senior Investigator in 2024.</p></div>
+
+        <h2>PSP Leads</h2>
+        <button class="accordion">Dr. Jamie Brannigan <span class="arrow">▼</span></button>
+        <div class="panel">
+          <p>
+            Dr Jamie Brannigan is a clinician scientist who trained at the University of Cambridge, where he also completed an undergraduate degree in neuroscience. He is currently a clinician scientist at Oxford University. His primary research interests are the clinical translation of implantable brain-computer interfaces, and the development of novel endovascular approaches to BCI. Jamie has several years of BCI experience within both academia and industry. In addition to his role at Oxford, he holds an honorary research fellowship at UCL, collaborating on studies aimed at assessing the clinical needs and patient preferences for implantable BCI devices.
+          </p>
+        </div>
+
+        <button class="accordion">Dr. William Muirhead <span class="arrow">▼</span></button>
+        <div class="panel"><p>Consultant neurosurgeon at the National Hospital for Neurology and Neurosurgery (NHNN). His research interests are in the application of new technologies to improve patient outcomes. Alongside his clinical practice he works with the Sensory Circuits and Neurotechnology laboratory at the Francis Crick Institute on novel neural interfaces and is Chief or Principal Investigator on several clinical trials.</p></div>
+
+        <h2>JLA Advisor</h2>
+        <button class="accordion">Dr. Jo Watson <span class="arrow">▼</span></button>
+        <div class="panel"><p>To be completed.</p></div>
+      </section>
     </div>
   </div>
 
   <footer>
-    <!-- unchanged -->
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form id="contactForm" onsubmit="sendEmail(); return false;">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </footer>
 
   <script>
-    /* unchanged */
+    function sendEmail() {
+      // Grab the values from the form fields
+      const nameField = document.getElementById("name");
+      const emailField = document.getElementById("email");
+      const messageField = document.getElementById("message");
+      
+      const name = nameField.value.trim();
+      const email = emailField.value.trim();
+      const message = messageField.value.trim();
+  
+      // Create a clean subject & body
+      const subject = encodeURIComponent("New message from " + name);
+      const body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n\n" +
+        message
+      );
+  
+      // Launch the user's mail client with a nice subject/body
+      window.location.href = `mailto:jamie.brannigan@hotmail.co.uk?subject=${subject}&body=${body}`;
+    }
+
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        var tab = document.getElementById(hash);
+        if (tab && tab.classList.contains('tab-content')) {
+          var allTabs = document.getElementsByClassName('tab-content');
+          for (var i = 0; i < allTabs.length; i++) {
+            allTabs[i].classList.remove('active');
+          }
+          tab.classList.add('active');
+          highlightNavLink(hash);
+        }
+      }
+    });
+
+    function openTab(evt, tabName) {
+      evt.preventDefault();
+      var tabcontent = document.getElementsByClassName("tab-content");
+      for (var i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      var navlinks = document.getElementsByClassName("nav-link");
+      for (var j = 0; j < navlinks.length; j++) {
+        navlinks[j].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+      history.pushState(null, '', '#' + tabName);
+      
+      // Close mobile menu if open
+      if (window.innerWidth <= 480) {
+        document.querySelector('nav ul').classList.remove('active');
+      }
+      
+      // Always scroll to the top when switching tabs
+      window.scrollTo(0, 0);
+    }
+
+    function toggleMobileMenu() {
+      var navUl = document.querySelector('nav ul');
+      if (navUl.classList.contains('active')) {
+        navUl.classList.remove('active');
+      } else {
+        navUl.classList.add('active');
+      }
+    }
+
+    function highlightNavLink(tabName) {
+      var navlinks = document.getElementsByClassName("nav-link");
+      for (var i = 0; i < navlinks.length; i++) {
+        navlinks[i].classList.remove("active");
+        var onClickAttr = navlinks[i].getAttribute("onclick");
+        if (onClickAttr && onClickAttr.includes("'" + tabName + "'")) {
+          navlinks[i].classList.add("active");
+        }
+      }
+    }
+
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        var arrow = this.querySelector(".arrow");
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+          arrow.textContent = "▼";
+        } else {
+          panel.style.display = "block";
+          arrow.textContent = "▲";
+        }
+      });
+    }
   </script>
 </body>
 </html>
